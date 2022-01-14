@@ -1,5 +1,4 @@
 
-//function doSomething(){
 
     
 const quiz = [
