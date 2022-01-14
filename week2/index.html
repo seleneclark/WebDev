@@ -7,8 +7,48 @@
   <link rel="stylesheet" href="">
 </head>
 
-<body>
-  <script src=""></script>
+<body onload="doSomething()">
+    <script>
+        function doSomething(){
+            const message = "Hello World";
+            alert(message);
+        }
+    
+    </script>
     <h1>Week 2 Page</h1>
+    <h2>Notes</h2>
+    <ul>
+        <li>Semicolon not required because of Automatic Semicolo Insertion(ASI) but its good form to add yourself</li>
+        <li>Use const when variable will not be reassigned to another value, doesn't work for objects</li>
+        <li>list of good JS methods on page 49</li>
+        <li>Symbols can be used to create unique values, they don't have a literal form.  use Symbol() </li>
+        <li>toExponential() can get confused if '.' is a dot or a decimal so us ".." or " ."(space dot) or dot after decimal or "(5).(paren dot)</li>
+        <li>NAN - not a number</li>
+        <li>Type Coercion - tries to convert an operand into a complementary type. Better to do it manually</li>
+        <li>parseInt() converts a string representation of a numerical value back into a number</li>
+        <li>don't use ^ for exponents, use **</li>
+        <li>Always use hard equality === hard equality checks for value and also data type</li>
+        <li>Number.isNAN() to check when a value is NAN</li>
+        <li>Destructuring assigns multiple values at the same tiem, using arrays: const [x,y.] = [1,2] so x=1 and y=2</li>
+        <li>Arrays can change in length after initialization. Crazy</li>
+        <li>Use pop, push, shift (removes first item), unshift (adds item to front) on arrays</li>
+        <li><b>Question:</b> How do you allow a regular set to be garbage collected when you are done with it?  Does clearing the set do it? </li>
+        <li><b>Question: </b>Same question about maps. Or should you mainly use the weak varieties?</li>
+        <li>Weak Sets are not enumerable, so they cannot be looped over</li>
+        <li>3 ways to declare a function: </li> 
+            <ol><li>function hello(){} </li>
+            <li>anonymous function:  const goodbye = function(){}; 3)</li>
+            <li>const goodbye = function(){};  Note: when you use a function expression (like 2 or 3) you must end it with a semicolon</li>
+            </ol>  
+        <li>REST operator for a function - "...args" - will allow the function to accept any number of arguments</li>
+        <li>Default Parameters - "function hello(name='World'){console.log('Hello ${name})} , must be put at the end of the paramters</li>
+        <li>Arrow functions </li>
+        <ul><li>const square= x => x*x;</li>
+            <li>const add = (x,y) => x+y;</li>
+            <li>const hello = () => console.log('Hello World');</li></ul>
+        
+    </ul>
+    <a href = "practice.html">Go to Practice Page</a><br>
+    <a href = "../quiz/index.html">Go to Quiz Ninja</a>
 </body>
 </html>

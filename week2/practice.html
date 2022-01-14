@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Practice</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<!--<body onload=doSomething()>-->
+
+<body>
+    <script>
+        function doSomething() {
+            const question = "What is Superman's real name?";
+            const answer = prompt(question);
+            alert(`You answered ${answer}`);
+        }
+
+        doSomething();
+        
+        function min(x, y) {
+            if (x < y) {
+                return x;
+            }
+            return y;
+        }
+        alert("The minimum of 0 and 10 is " + min(0, 10));
+        // → 0
+        alert("The minimum of 0 and -10 is " + min(0, -10));
+        // → -10
+
+
+        function countBs(bList) {
+            const array = bList.split("").filter(x => x === 'B');
+            return array.length;
+        }
+
+        alert("The number of Bs in BBC is " + countBs("BBC"));
+
+
+    </script>
+</body>
+
+</html>
