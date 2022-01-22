@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3</title>
+</head>
+
+<body>
+    <script>
+        //        function blowUpBalloon() {
+        //            const balloon = document.getElementById('balloon');
+        //            if (balloon.style.fontSize == "larger"){
+        //                balloon.style.fontSize ='xx-small';
+        //            }
+        //if (balloon.style.fontSize == "xx-small"){
+        //                balloon.style.fontSize ='larger';
+        //            }
+        //                        balloon.style.fontSize = "larger";
+        //
+        //        }
+        //        addEventListener('keypress', (event) => alert(`You pressed the ${event.key} character`));
+//        addEventListener('keypress', (event) => {
+//            if (event.key === "ArrowUp") {
+//                alert("winning");
+//            }
+            //            alert(`You pressed the ${event.key} character`);
+        });
+
+
+        //        const blowBalloon = document.getElementById('page');
+        //        blowBalloon.addEventListener('click', () => alert('You Clicked!'));
+
+
+        let p - document.querySelector("p");
+        let size;
+
+        function setSize(newSize) {
+            size = newSize;
+            p.style.fontSize = size + "px";
+        }
+        setSize(20);
+
+        function handleArrow(event) {
+            if (event.key === "ArrowUp") {
+                if (size > 70) {
+                    p.textContent = "💥";
+                    document.body.removeEventListener("keydown", handleArrow);
+                } else {
+                    setSize(size * 1.1);
+                    event.preventDefault();
+                }
+            } else if (event.key == "ArrowDown") {
+                setSize(size * 0.9);
+                event.preventDefault();
+            }
+        }
+        document.body.addEventListener("keydown", handleArrow);
+
+    </script>
+    <a href="../quiz/index.html">Go to Quiz Ninja</a><br>
+    <a href="practice.html">Go to Practice page</a><br>
+    <a href="group.html">Go to Group page</a>
+
+
+
+    <p id="balloon">🎈</p>
+
+
+</body>
+
+</html>

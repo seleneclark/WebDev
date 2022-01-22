@@ -7,7 +7,11 @@ const links = [
     {
         label: "Week 2",
         url: "week2/index.html"
-    }
+    },
+    {
+        label: "Week3",
+        url: "week3/index.html"
+    }   
 ]
 
 function createList(){
