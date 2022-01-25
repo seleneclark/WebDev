@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Week 4</h1>
+    <a href="../quiz/index.html">Go to the Ninja Quiz</a><br>
+    <a href="hero.html">See the Hero form</a><br>
+    <a href="search.html">See the Search example</a><br>
+    <ul>
+        <li><b>Forms!!</b></li>
+        <li>document.forms returns an HTML collection of all the forms in the document in the order they appear in the markup</li>
+        <li>The form.submit() method will submit the form automatically. BUT(!) it won’t trigger the form submit event.</li>
+        <li>So many ways to return the form elements:</li>
+        <ul>
+            <li>const form = document.forms[0]; //first one in the collection</li>
+            <li>const form = document.forms.search; //using name 'search'</li>
+            <li>const form = document.forms['search']; //also using name 'search'</li>
+            <li>const [input, button] = form.elements; //returns the listed elements</li>
+        </ul>
+        <li>Stop the form from being submitted with event.preventDefault()</li>
+    </ul>
+    <script></script>
+</body>
+</html>
