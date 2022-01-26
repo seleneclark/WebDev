@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Team</title>
+    <style>
+        .board {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+        .cell {
+            width: 200px;
+            height: 200px;
+        }
+        #two {
+            border-right: 5px solid black;
+            border-bottom:5px solid black;
+            border-left: 5px solid black;
+        }
+        #four {
+            border-top: 5px solid black;
+            border-right: 5px solid black;
+            border-bottom:5px solid black;
+        }
+
+        #six {
+            border-top: 5px solid black;
+            border-left: 5px solid black;
+            border-bottom:5px solid black;
+        }
+        #eight {
+            border-top: 5px solid black;
+            border-right: 5px solid black;
+            border-left:5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="board">
+        <div class="cell" id="one"></div>
+        <div class="cell" id="two"></div>
+        <div class="cell" id="three"></div>
+        <div class="cell" id="four"></div>
+        <div class="cell" id="five"></div>
+        <div class="cell" id="six"></div>
+        <div class="cell" id="seven"></div>
+        <div class="cell" id="eight"></div>         
+        <div class="cell" id="nine"></div>
+
+    </div>
+    <button onclick="clearBoard()">Clear</button>
+</body>
+</html>
+<script>
+    const cells = document.querySelectorAll(".cell");
+    let  player = 1;
+    let letter = 'X';
+    function play(){
+        console.log("got here");
+        if(player ==1){
+            letter = "X";
+            player = 2;
+        }else{
+            letter = "0";
+            player = 1;
+        }
+        document.getElementById(this.id).innerHTML = letter;
+    }
+    function clearBoard() {
+        cells.forEach(cell => cell.innerHTML = '');
+    }
+    
+    cells.forEach(cell => cell.addEventListener("click", play));
+    
+</script>

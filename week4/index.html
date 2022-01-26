@@ -12,6 +12,7 @@
     <a href="../quiz/index.html">Go to the Ninja Quiz</a><br>
     <a href="hero.html">See the Hero form</a><br>
     <a href="search.html">See the Search example</a><br>
+    <a href="group.html">See the group work</a>
     <ul>
         <li><b>Forms!!</b></li>
         <li>document.forms returns an HTML collection of all the forms in the document in the order they appear in the markup</li>
@@ -24,6 +25,17 @@
             <li>const [input, button] = form.elements; //returns the listed elements</li>
         </ul>
         <li>Stop the form from being submitted with event.preventDefault()</li>
+        <li>Recommended to use literals to create arrays (const arr = {1,2,3}) even tho you CAN use the new constructor function.</li>
+        <li>Recommended to call class constructor using the "new" operator</li>
+        <li> static method is called directly rather than by instances of the class</li>
+        <li> Static methods are not available to instances of the class</li>
+        <li>Use a prototype to define any properties that will remain the same for every instance of the class</li>
+        <li><b>Is the prototype stuff for legacy code?</b> It said its suitable for any properties that remain the same for all objects, but you can do the same thing in a class constructor.</li>
+        <li>Monkey patching is adding methods to javascript's built in objects.  Don't do it though, because it could cause problems in the future when it is natively implemented in the language. Using "extends" is one possible solution</li>
+        <li>Make "skinny" classes - not too many properties and methods</li>
+        <li>Class Inheritance - only inherit once, keep the inheritance chain to just two objects</li>
+        <li>Use the keyword <b>export</b> to specify values or functions available from the module</li>
+        
     </ul>
     <script></script>
 </body>
