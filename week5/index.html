@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Week 5</h1>
+    <a href="error.html">Go to Error page</a><br>
+    <a href="hikes/index.html">Go to Hikes Group page</a>
+    <ul>
+        <li>Add 'use strict'; to the first line of Javascript file to require strict mode. Problems will show up earlier and can be solved</li>
+        <li>Linting tools available to find issues</li>
+        <li>console has a lot of display options that are useful</li>
+        <li>debugger - can step through code with debugger keyword</li>
+        <li>Try catch blocks for handling exception error</li>
+    </ul>
+    <h2>Questions</h2>
+    <ol>
+        <li><b>How were we supposed to use modules in the group project?</b> The group project instructed us to. We were never able to get that functionality to work at all. And when I looked it up, it said "Modules work only via HTTP(s), no locally". It said that you can't use import/export directives locally and that to solve this, we would need to spin up our site as a server.  See this <a href="https://javascript.info/modules-intro#what-is-a-module">link</a>.  We wasted a lot of time trying to get the modules working and weren't able to.</li>
+        <li><b>How do I use a self-invoking function?</b>  I wrapped all my js code in main.js in the self invoking function as recommended but then when I added a button to call a function, I couldn't figure out how to make the button onclick call "see" the function.  I had to commend out the self-invoking function to get it to work.</li>
+    </ol>
+    <button onclick="amIOldEnough(16)">Try Debugger</button>
+    <script src="./main.js"></script>
+
+    
+</body>
+</html>
