@@ -19,7 +19,13 @@ const todoList = [
     {
         id: '',
         content: 'Finish homework',
-        completed: false
+        completed: true
+    },
+    {
+        id: '',
+        content: 'Practice piano',
+        completed: true
+    
     }
 ]
 // Loads the original todo List
@@ -34,11 +40,17 @@ function getAllTasks(){
 }
 
 function getActiveTasks(){
-    document.getElementById("tasksLeft").innerHTML = 2;
+    
+    let taskCount = todoList.filter(item => !item.completed).length;
+    console.table(taskCount);
+
+    document.getElementById("tasksLeft").innerHTML = taskCount;
 
 }
 
 function getCompletedTasks(){
-    document.getElementById("tasksLeft").innerHTML = 1;
+    let taskCount = todoList.filter(item=>item.completed).length;
+    console.table(taskCount);
 
+    document.getElementById("tasksLeft").innerHTML = taskCount;
 }
