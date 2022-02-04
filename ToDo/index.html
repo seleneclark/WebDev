@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .listbox {
+            border-style: groove;
+            width: 266px;
+        }
+        .cell {
+            border-style: groove;
+            height: 25px;
+            width: 260px;
+        }
+        .todoText {
+            display: inline-block;
+            width: 200px;
+            /* background-color: yellow;  */
+        }
+        .footer {
+            border-style: groove;
+            height: 25px;
+            width: 260px;
+            color:darkgrey;
+            font-size: 0.875em;
+            
+        }
+        .footerButtons{
+            padding-left: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>ToDos</h1>
+    <form name='todo' action='/todo'>
+        <div class="listbox">
+            <div class="cell">
+                <input type='checkbox'>
+                <span class="todoText">1</span>
+                <button type='submit'>X</button>
+            </div>
+    
+            <div class="cell">
+                <input type='checkbox'>
+                <span class="todoText">1</span>
+                <button type='submit'>X</button>
+            </div>
+            <div class="cell">
+                <input type='checkbox'>
+                <span class="todoText">1</span>
+                <button type='submit'>X</button>
+            </div>
+            <div class="cell">
+                <input type='checkbox'>
+                <span class="todoText">1</span>
+                <button type='submit'>X</button>
+            </div>
+
+            <div class="footer">
+                <span id="tasksLeft"></span> tasks left
+                    <span id="allTasksleft" class="footerButtons">All</span>
+                    <span id="activeTasksleft" class="footerButtons">Active</span>
+                    <span id="completedTasksleft" class="footerButtons">Completed</span>
+            </div>
+        </div>
+
+    </form>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
+
