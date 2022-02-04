@@ -37,7 +37,7 @@
 </head>
 <body>
     <h1>ToDos</h1>
-    <form name='todo' action='/todo'>
+   
         <div class="listbox">
             <div class="cell">
                 <input type='checkbox'>
@@ -63,13 +63,17 @@
 
             <div class="footer">
                 <span id="tasksLeft"></span> tasks left
-                    <span id="allTasksleft" class="footerButtons">All</span>
+                    <!-- <span id="allTasksleft" class="footerButtons">All</span>
                     <span id="activeTasksleft" class="footerButtons">Active</span>
-                    <span id="completedTasksleft" class="footerButtons">Completed</span>
+                    <span id="completedTasksleft" class="footerButtons">Completed</span> -->
+                    
+                    <!-- replaced spans with buttons to get functionality working first -->
+                    <button onclick="getAllTasks()">All</button>
+                    <button onclick="getActiveTasks()">Active</button>
+                    <button onclick="getCompletedTasks()">Completed</button>
             </div>
         </div>
 
-    </form>
 
 
     <script src="main.js"></script>

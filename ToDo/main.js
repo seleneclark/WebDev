@@ -2,26 +2,43 @@
 
 const todoList = [
     {
-        task: 'Grocery Shopping',
-        status: 'active'
+        id: '',
+        content: 'Grocery Shopping',
+        completed: false
     },
     {
-        task: 'Pick up Dog',
-        status: 'active'
+        id: '',
+        content: 'Pick up Dog',
+        completed: false
     },
     {
-        task: 'Bake a cake',
-        status: 'active'
+        id: '',
+        content: 'Bake a cake',
+        completed: false
     },
     {
-        task: 'Finish homework',
-        status: 'active'
+        id: '',
+        content: 'Finish homework',
+        completed: false
     }
 ]
 // Loads the original todo List
 for (var i=0; i < todoList.length; i++){
-    document.getElementsByClassName("todoText")[i].innerHTML = todoList[i].task;
+    document.getElementsByClassName("todoText")[i].innerHTML = todoList[i].content;
+}
+document.getElementById("tasksLeft").innerHTML = todoList.length;
+
+function getAllTasks(){
+    document.getElementById("tasksLeft").innerHTML = todoList.length;
+
 }
 
-document.getElementById("tasksLeft").innerHTML = todoList.length;
-document.getElementById("tasksLeft").innerHTML = todoList.length;
+function getActiveTasks(){
+    document.getElementById("tasksLeft").innerHTML = 2;
+
+}
+
+function getCompletedTasks(){
+    document.getElementById("tasksLeft").innerHTML = 1;
+
+}
