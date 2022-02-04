@@ -1,6 +1,6 @@
 'use strict'
 
-const todoList = [
+const todoListStart = [
     {
         id: '',
         content: 'Grocery Shopping',
@@ -33,24 +33,27 @@ const todoList = [
 // ToDo Class
 ////////////////////////////////////////////////////////////////
 class Todos {
-    constructor(todoList){
+    constructor(todoListStart){
         //taking the array and saving in the todo class
-        this.todoList = todoList;
+        todoList = todoListStart;
+        this.createList();
         this.getAllTasks();
     }
-    // Loads the original todo List to the page
+    clear(){
+        document.getElementById("listbox").innerHTML = '';
+    }
     createList(){
+        this.clear();
         for (var i=0; i < todoList.length; i++){
             const text = todoList[i].content;
             document.getElementById("listbox").innerHTML +=
                 `<div class="cell">
-                <input type='checkbox'>
-                <span class="todoText">`+ text + `</span>
-                <button type='submit'>X</button>
+                    <input type='checkbox'>
+                    <span class="todoText">`+ text + `</span>
+                    <button type='submit'>X</button>
                 </div>`;
         }
     }  
-    
     getAllTasks(){
         document.getElementById("tasksLeft").innerHTML = todoList.length;
     }
@@ -62,17 +65,21 @@ class Todos {
         let taskCount = todoList.filter(item=>item.completed).length;
         document.getElementById("tasksLeft").innerHTML = taskCount;
     }
-    
 }   
+
+function saveTodo(time, newtodo,completionStatus){
+    let t = { id: time, content: newtodo, completed: completionStatus};
+    todoList.push(t);
+    todos.createList();
+}
+
+let todoList = [];
 
 /////////////////////////////////////////////////////////////////
 // Getting Setup on the page
 ////////////////////////////////////////////////////////////////
-
-
-let todos = new Todos(todoList);
-todos.createList();
-
+let todos = new Todos(todoListStart);
+saveTodo("", "Knit a Sweater", true);
 
 /////////////////////////////////////////////////////////////////
 // Utilities
