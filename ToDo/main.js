@@ -39,31 +39,26 @@ function createList(){
             <button type='submit'>X</button>
             </div>`;
     }
+}  
+function getAllTasks(){
+    document.getElementById("tasksLeft").innerHTML = todoList.length;
 }
-            
+function getActiveTasks(){
+    let taskCount = todoList.filter(item => !item.completed).length;
+    document.getElementById("tasksLeft").innerHTML = taskCount;
+}
+function getCompletedTasks(){
+    let taskCount = todoList.filter(item=>item.completed).length;
+    document.getElementById("tasksLeft").innerHTML = taskCount;
+}
 
+        
+/////////////////////////////////////////////////////////////////
+// Getting Setup on the page
+////////////////////////////////////////////////////////////////
 createList();
 getAllTasks();
 
-
-
-function getAllTasks(){
-    document.getElementById("tasksLeft").innerHTML = todoList.length;
-
-}
-
-function getActiveTasks(){
-    
-    let taskCount = todoList.filter(item => !item.completed).length;
-    console.table(taskCount);
-
-    document.getElementById("tasksLeft").innerHTML = taskCount;
-
-}
-
-function getCompletedTasks(){
-    let taskCount = todoList.filter(item=>item.completed).length;
-    console.table(taskCount);
-
-    document.getElementById("tasksLeft").innerHTML = taskCount;
-}
+document.getElementById("allTasksleft").addEventListener("mousedown", getAllTasks);
+document.getElementById("activeTasksleft").addEventListener("mousedown", getActiveTasks);
+document.getElementById("completedTasksleft").addEventListener("mousedown", getCompletedTasks);
