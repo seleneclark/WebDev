@@ -1,6 +1,7 @@
 .box {
     border-style: groove;
     width: 266px;
+    height: 400px;
 }
 
 
@@ -8,6 +9,7 @@
     border-style: groove;
     height: 25px;
     width: 260px;
+    
 }
 .todoText {
     display: inline-block;
@@ -24,5 +26,12 @@
 }
 .footerButtons{
     padding-left: 10px;
+}
+.addSection{
+    position: absolute;
+    top: 460px;
+}
+#add{
+    width: 225px;
 }
  

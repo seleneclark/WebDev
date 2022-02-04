@@ -29,7 +29,6 @@ const todoList = [
     }
 ]
 // Loads the original todo List to the page
-
 function createList(){
     for (var i=0; i < todoList.length; i++){
         const text = todoList[i].content;
@@ -44,12 +43,9 @@ function createList(){
             
 
 createList();
+getAllTasks();
 
-// Loads the original todo List
-// for (var i=0; i < todoList.length; i++){
-//     document.getElementsByClassName("todoText")[i].innerHTML = todoList[i].content;
-// }
-document.getElementById("tasksLeft").innerHTML = todoList.length;
+
 
 function getAllTasks(){
     document.getElementById("tasksLeft").innerHTML = todoList.length;
