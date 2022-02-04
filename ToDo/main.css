@@ -1,0 +1,28 @@
+.box {
+    border-style: groove;
+    width: 266px;
+}
+
+
+.cell {
+    border-style: groove;
+    height: 25px;
+    width: 260px;
+}
+.todoText {
+    display: inline-block;
+    width: 200px;
+    /* background-color: yellow;  */
+}
+.footer {
+    border-style: groove;
+    height: 25px;
+    width: 260px;
+    color:darkgrey;
+    font-size: 0.875em;
+    
+}
+.footerButtons{
+    padding-left: 10px;
+}
+ 

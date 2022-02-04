@@ -28,10 +28,27 @@ const todoList = [
     
     }
 ]
-// Loads the original todo List
-for (var i=0; i < todoList.length; i++){
-    document.getElementsByClassName("todoText")[i].innerHTML = todoList[i].content;
+// Loads the original todo List to the page
+
+function createList(){
+    for (var i=0; i < todoList.length; i++){
+        const text = todoList[i].content;
+        document.getElementById("listbox").innerHTML +=
+            `<div class="cell">
+            <input type='checkbox'>
+            <span class="todoText">`+ text + `</span>
+            <button type='submit'>X</button>
+            </div>`;
+    }
 }
+            
+
+createList();
+
+// Loads the original todo List
+// for (var i=0; i < todoList.length; i++){
+//     document.getElementsByClassName("todoText")[i].innerHTML = todoList[i].content;
+// }
 document.getElementById("tasksLeft").innerHTML = todoList.length;
 
 function getAllTasks(){
