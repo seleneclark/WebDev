@@ -1,34 +1,3 @@
-'use strict'
-
-const todoListStart = [
-    {
-        id: '',
-        content: 'Grocery Shopping',
-        completed: false
-    },
-    {
-        id: '',
-        content: 'Pick up Dog',
-        completed: false
-    },
-    {
-        id: '',
-        content: 'Bake a cake',
-        completed: false
-    },
-    {
-        id: '',
-        content: 'Finish homework',
-        completed: true
-    },
-    {
-        id: '',
-        content: 'Practice piano',
-        completed: true
-    
-    }
-]
-
 /////////////////////////////////////////////////////////////////
 // ToDo Class
 ////////////////////////////////////////////////////////////////
@@ -67,23 +36,14 @@ class Todos {
     }
 }   
 
-function saveTodo(time, newtodo,completionStatus){
-    let t = { id: time, content: newtodo, completed: completionStatus};
+function saveTodo( newtodo,completionStatus){
+    console.log("Did we get here");
+    let t = { id: Date.now(), content: newtodo, completed: completionStatus};
     todoList.push(t);
-    todos.createList();
+    // todos.createList();
 }
+
 
 let todoList = [];
 
-/////////////////////////////////////////////////////////////////
-// Getting Setup on the page
-////////////////////////////////////////////////////////////////
-let todos = new Todos(todoListStart);
-saveTodo("", "Knit a Sweater", true);
-
-/////////////////////////////////////////////////////////////////
-// Utilities
-////////////////////////////////////////////////////////////////
-document.getElementById("allTasksleft").addEventListener("mousedown", todos.getAllTasks);
-document.getElementById("activeTasksleft").addEventListener("mousedown", todos.getActiveTasks);
-document.getElementById("completedTasksleft").addEventListener("mousedown", todos.getCompletedTasks);
+export { Todos, saveTodo };

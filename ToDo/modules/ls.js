@@ -1,8 +1,4 @@
 'use strict';
-
-import {Todos, saveTodo} from './modules/Todos.js';
-// import {all, active, complete} from './modules/utilities.js';
-
 const todoListStart = [
     {
         id: '',
@@ -31,10 +27,3 @@ const todoListStart = [
     
     }
 ]
-
-/////////////////////////////////////////////////////////////////
-// Getting Setup on the page
-////////////////////////////////////////////////////////////////
-let todos = new Todos(todoListStart);
-saveTodo( "Knit a Sweater", true);
-todos.createList();
