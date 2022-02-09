@@ -1,10 +1,10 @@
-/////////////////////////////////////////////////////////////////
-// ToDo Class
-////////////////////////////////////////////////////////////////
+import { getList } from './ls.js';
+
+
 class Todos {
-    constructor(todoListStart){
+    constructor(){
         //taking the array and saving in the todo class
-        todoList = todoListStart;
+        todoList = getList();
         this.createList();
         this.getAllTasks();
     }
@@ -37,7 +37,6 @@ class Todos {
 }   
 
 function saveTodo( newtodo,completionStatus){
-    console.log("Did we get here");
     let t = { id: Date.now(), content: newtodo, completed: completionStatus};
     todoList.push(t);
     // todos.createList();

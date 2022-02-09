@@ -1,4 +1,5 @@
 'use strict';
+
 const todoListStart = [
     {
         id: '',
@@ -27,3 +28,7 @@ const todoListStart = [
     
     }
 ]
+function getList() {
+    return todoListStart;
+}
+export {getList};
