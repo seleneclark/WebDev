@@ -1,4 +1,5 @@
 import { getList } from './ls.js';
+// import { useUtilities } from './modules/utilities.js';
 
 
 class Todos {
@@ -11,6 +12,7 @@ class Todos {
     clear(){
         document.getElementById("listbox").innerHTML = '';
     }
+    //my function
     createList(){
         this.clear();
         for (var i=0; i < todoList.length; i++){
@@ -23,6 +25,7 @@ class Todos {
                 </div>`;
         }
     }  
+
     getAllTasks(){
         document.getElementById("tasksLeft").innerHTML = todoList.length;
     }
@@ -34,12 +37,36 @@ class Todos {
         let taskCount = todoList.filter(item=>item.completed).length;
         document.getElementById("tasksLeft").innerHTML = taskCount;
     }
+
+    
+    //Complete Todos.addTodo
+
+    
+
+
 }   
 
 function saveTodo( newtodo,completionStatus){
+    // this should be saving it to local storage which I do NOT know how to do
     let t = { id: Date.now(), content: newtodo, completed: completionStatus};
     todoList.push(t);
-    // todos.createList();
+}
+
+//create the renderToDoList
+function renderToDoList(list, index){
+    document.getElementById("listbox").innerHTML +=
+            `<div class="cell">
+                <input type='checkbox'>
+                <span class="todoText">`+ list[index].content + `</span>
+                <button type='submit'>X</button>
+            </div>`;
+
+}
+
+function getTodos(){
+    if (todoList == null){
+        todoList = getList();
+    }
 }
 
 
