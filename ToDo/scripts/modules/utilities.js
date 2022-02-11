@@ -12,6 +12,8 @@ function useUtilities(todos){
     document.getElementById("allTasksleft").addEventListener("mousedown",function(){
         todos.getAllTasks();
     });
+
+    
 }
 
 export { useUtilities };

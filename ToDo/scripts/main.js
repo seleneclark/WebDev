@@ -7,14 +7,26 @@ import { useUtilities } from './modules/utilities.js';
 
 
 let todos = new Todos();
-saveTodo( "Knit a Sweater", true);
-todos.createList();
-getTodos();
+// todos.addTodo( "Knit a Sweater");
+// todos.listTodos();
+// getTodos();
 
-
+//activates the listeners
 useUtilities(todos);
 
 
+
+
+
+//this whole thing needs to be moved to the utilities
+const form = document.getElementById('form')
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const newTodo = e.target;
+    const todo = newTodo.addNewTodo.value;
+    todos.addTodo(todo);
+
+});
 
 // const all = document.getElementById("allTasksleft").addEventListener("mousedown", todos.getAllTasks);
 // const active = document.getElementById("activeTasksleft").addEventListener("mousedown", todos.getActiveTasks);
