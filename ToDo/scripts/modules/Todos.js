@@ -1,4 +1,4 @@
-import { getList } from './ls.js';
+import { getList, readFromLS, writeToLS } from './ls.js';
 // import { useUtilities } from './modules/utilities.js';
 
 
@@ -7,7 +7,7 @@ class Todos {
         //taking the array and saving in the todo class
         todoList = getList();
         this.createList();
-        this.getAllTasks();
+        getAllTasks();
     }
     clear(){
         document.getElementById("listbox").innerHTML = '';
@@ -36,13 +36,8 @@ class Todos {
     getCompletedTasks(){
         let taskCount = todoList.filter(item=>item.completed).length;
         document.getElementById("tasksLeft").innerHTML = taskCount;
-    }
-
-    
+    }  
     //Complete Todos.addTodo
-
-    
-
 
 }   
 
@@ -50,6 +45,7 @@ function saveTodo( newtodo,completionStatus){
     // this should be saving it to local storage which I do NOT know how to do
     let t = { id: Date.now(), content: newtodo, completed: completionStatus};
     todoList.push(t);
+    writeToLS(todoList);
 }
 
 //create the renderToDoList
@@ -62,14 +58,27 @@ function renderToDoList(list, index){
             </div>`;
 
 }
-
+//Returns todoList, if its empty(null), reads from local storage and then returns it
 function getTodos(){
     if (todoList == null){
-        todoList = getList();
+        todoList = readFromLS();
     }
+    return todoList;
 }
+
+function getAllTasks(){
+    document.getElementById("tasksLeft").innerHTML = todoList.length;
+}
+function getActiveTasks(){
+    let taskCount = todoList.filter(item => !item.completed).length;
+    document.getElementById("tasksLeft").innerHTML = taskCount;
+}
+function getCompletedTasks(){
+    let taskCount = todoList.filter(item=>item.completed).length;
+    document.getElementById("tasksLeft").innerHTML = taskCount;
+}  
 
 
 let todoList = [];
 
-export { Todos, saveTodo };
+export { Todos, saveTodo, getTodos, getAllTasks, getActiveTasks, getCompletedTasks };

@@ -1,6 +1,6 @@
 'use strict';
 
-import {Todos, saveTodo} from './modules/Todos.js';
+import {Todos, saveTodo, getTodos, getAllTasks, getActiveTasks, getCompletedTasks } from './modules/Todos.js';
 import { useUtilities } from './modules/utilities.js';
 
 
@@ -9,8 +9,10 @@ import { useUtilities } from './modules/utilities.js';
 let todos = new Todos();
 saveTodo( "Knit a Sweater", true);
 todos.createList();
+getTodos();
 
-useUtilities();
+
+useUtilities(todos);
 
 
 

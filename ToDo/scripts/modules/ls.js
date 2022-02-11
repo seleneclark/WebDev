@@ -31,4 +31,14 @@ const todoListStart = [
 function getList() {
     return todoListStart;
 }
-export {getList};
+// Reads JSON ToDo list from localStorage returns to TODOS.js using key "savedList"
+function readFromLS() {
+    let listString = localStorage.getItem("savedList");
+    return JSON.parse(listString);
+
+}
+//Saves Todo List in Local Storage under the key name "savedList"
+function writeToLS(todoList){
+    localStorage.setItem("savedList", JSON.stringify(todoList));
+}
+export { getList, readFromLS, writeToLS};
