@@ -1,7 +1,6 @@
 'use strict';
 import {  readFromLS, writeToLS } from './ls.js';
 
-
 class Todos {
     constructor(){
         todoList = getTodos();
@@ -19,14 +18,11 @@ class Todos {
 
     //remove a todo item
     removeTodo(todoText){
-        console.log(todoText);
-        // const todoIndex = todoList.indexOf({content: todoText});
         const index = todoList.findIndex((element, index) => {
             if (element.content === todoText){
                 return true;
             }
         });
-        // delete todoList[index];
         todoList.splice(index, 1);
 
         writeToLS(todoList);
@@ -50,12 +46,22 @@ class Todos {
     }
     //create the renderToDoList
     renderToDoList(list, index){
-        document.getElementById("listbox").innerHTML +=
+        if (list[index].completed){ //when completed == true
+            document.getElementById("listbox").innerHTML +=
+            `<div class="cell">
+                <input type='checkbox' name='check'>
+                <span class='todoTextComplete'>`+ list[index].content + `</span>
+                <button type='submit' name='remove'>X</button>
+            </div>`;
+        } else {// when todo is not completed
+            document.getElementById("listbox").innerHTML +=
             `<div class="cell">
                 <input type='checkbox' name='check'>
                 <span class='todoText'>`+ list[index].content + `</span>
                 <button type='submit' name='remove'>X</button>
             </div>`;
+        }
+        
 
     }
     getAllTasks(){
@@ -78,7 +84,6 @@ class Todos {
 
 //takes a new todo, pushes onto the todoList and saves it to local storage
 function saveTodo( newtodo,completionStatus){
-    
     let t = { id: Date.now(), content: newtodo, completed: completionStatus};
     todoList.push(t);
     writeToLS(todoList);
@@ -87,7 +92,6 @@ function saveTodo( newtodo,completionStatus){
 
 //Returns todoList, if its empty, reads from local storage and then returns it
 function getTodos(){
-    
     if (todoList.length == 0){
         let length = readFromLS().length;
         if (length != 0){
@@ -112,4 +116,4 @@ function getCompletedTasks(){
 
 let todoList = [];
 
-export { Todos, saveTodo, getTodos, getAllTasks, getActiveTasks, getCompletedTasks };
+export { Todos };

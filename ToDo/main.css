@@ -3,8 +3,6 @@
     width: 266px;
     height: 400px;
 }
-
-
 .cell {
     border-style: groove;
     height: 25px;
@@ -14,8 +12,11 @@
 .todoText {
     display: inline-block;
     width: 200px;
-    /* background-color: yellow;  */
-    /* text-decoration: line-through; */
+}
+.todoTextComplete {
+    display: inline-block;
+    width: 200px;
+    text-decoration: line-through;
 }
 .footer {
     border-style: groove;
@@ -23,7 +24,6 @@
     width: 260px;
     color:darkgrey;
     font-size: 0.875em;
-    
 }
 .footerButtons{
     padding-left: 10px;
