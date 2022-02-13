@@ -10,16 +10,33 @@ function useUtilities(todos){
     const todoItem = document.getElementsByClassName('cell');
 
     //Remove item
+    // const removeItem = document.getElementsByClassName('remove');
+
+
     const removeItem = document.getElementsByTagName('span');
+    
     for (let i = 0; i < todoItem.length; i++){
+        //remove item
         todoItem[i].addEventListener('click', function(e){
+            
+            console.log('trying to remove');
             e.preventDefault();
             let removeItemText = removeItem[i].textContent;
             todos.removeTodo(removeItemText);
         }, false);
+        
     };
+   
+    const markCompletedList = document.getElementsByClassName('check');
+    for (let i = 0; i < markCompletedList.length; i++){
+        markCompletedList[i].addEventListener('change', function(e){
+            console.log('trying to mark as complete');
+            todos.completeTodo(i);
 
-    
+        }, false);
+    }
+
+
     document.getElementById("completedTasksleft").addEventListener("mousedown", function(){
         todos.getCompletedTasks();
     });
@@ -33,18 +50,6 @@ function useUtilities(todos){
     });
 
 
-   
-
-  
-    //Mark as completed
-    //'check' is the checkbox input type
-    // const complete = document.getElementsByClassName('check'); 
-    // for (let i = 0; i < todoItem.length; i++){
-    //     // complete[i].addEventListener('')
-    // }
-
-    
-
 }
 
 
@@ -57,6 +62,7 @@ function newTodo(e, todos){
     const newTodo = e.target;
     const todo = newTodo.addNewTodo.value;
     todos.addTodo(todo);
+    form.reset();
 };
 
 //Couldn't get this way of deleting working

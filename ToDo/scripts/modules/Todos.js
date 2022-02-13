@@ -6,6 +6,7 @@ class Todos {
         todoList = getTodos();
         this.listTodos();
     }
+    //clears the html list
     clear(){
         document.getElementById("listbox").innerHTML = '';
     }
@@ -30,13 +31,25 @@ class Todos {
     }
 
     //mark todo item as complete
-    completeTodo(todo){
-        const todoIndex = todoList.indexOf(todo);
-        todoList[todoIndex].completed = true;
+    completeTodo(index){
+        if (todoList[index].completed){
+            todoList[index].completed = false;
+        } else {
+            todoList[index].completed = true;
+        }
+        writeToLS(todoList);
+        this.listTodos();
     }
+
+  
+
     //Displays list by calling renderToDoList on each item
     listTodos(){
-        this.clear();
+        this.clear(); 
+        //find out what the selection is for showing the tasks
+        //do here
+
+        //go thru list and call render on each item
         if (todoList != 0){
             for (var i=0; i < todoList.length; i++){
                 this.renderToDoList(todoList, i);
@@ -46,23 +59,25 @@ class Todos {
     }
     //create the renderToDoList
     renderToDoList(list, index){
-        if (list[index].completed){ //when completed == true
-            document.getElementById("listbox").innerHTML +=
+ 
+        const todoItem = document.getElementById("listbox");
+        //when completed == true
+        if (list[index].completed){ 
+            todoItem.innerHTML +=
             `<div class="cell">
-                <input type='checkbox' name='check'>
+                <input type='checkbox' name='check' class='check'>
                 <span class='todoTextComplete'>`+ list[index].content + `</span>
-                <button type='submit' name='remove'>X</button>
+                <button type='submit' class='remove'>X</button>
             </div>`;
+
         } else {// when todo is not completed
-            document.getElementById("listbox").innerHTML +=
+            todoItem.innerHTML +=
             `<div class="cell">
-                <input type='checkbox' name='check'>
+                <input type='checkbox' name='check' class='check'>
                 <span class='todoText'>`+ list[index].content + `</span>
-                <button type='submit' name='remove'>X</button>
+                <button type='submit' class='remove'>X</button>
             </div>`;
         }
-        
-
     }
     getAllTasks(){
         if (todoList != 0){
