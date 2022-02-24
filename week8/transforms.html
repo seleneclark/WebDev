@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        .ad-ad1 h1:hover span {
+            color: #484848;
+            transform: translateX(40px) scale(1.5);
+        }
+        .ad-ad1 h1 span {
+            font-size: 30px;
+            color: #999999;
+            display: inline-block;
+        }
+        .ad-ad2 h1:hover span {
+            color: #484848;
+            transform: rotate(10deg) translateX(40px) scale(1.5);
+        }
+        .ad-ad2 h1 span {
+            font-size: 30px;
+            color: #999999;
+            display: inline-block;
+        }
+        .ad-ad3 h1:hover span {
+            color: #484848;
+            transform: scale(1.5) translateX(40px)  rotate(10deg) ;
+        }
+        .ad-ad3 h1 span {
+            font-size: 30px;
+            color: #999999;
+            display: inline-block;
+        }
+        .transition h1 span {
+            font-size: 30px;
+            color: #999999;
+            display: inline-block;
+            /* transition-property: transform;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+            transition-delay: 50ms; */
+            transition: transform 0.5s ease-out 100ms; 
+        }
+        .transition h1:hover span {
+            color: #484848;
+            transform: scale(1.5) translateX(40px)  rotate(10deg) ;
+            
+        }
+        .colorTransition h1 span {
+            font-size: 30px;
+            color: #999999;
+            display: inline-block;
+            transition-property: transform, color; 
+            transition-duration: 1s, 0.8s;  
+            transition-timing-function: ease-out, linear;
+            transition-delay: 50ms;
+        }
+        .colorTransition h1:hover span {
+            color: #6573a1;
+            transform: scale(1.5) translateX(40px)  rotate(10deg) ;
+            
+        }
+        @keyframes bike {
+            0% {
+            background-position: 0 0;
+            }
+            100% {
+            background-position: -360px 0;
+            }
+        }
+        @keyframes move {
+            0% {
+            transform: translateX(-100px);
+            }
+            100% {
+            transform: translateX(100px);
+            }
+        }  
+            
+        p:after {
+            content: '';
+            width: 90px;
+            height: 92px;
+            background-image: url(./images/bike.png);
+            display: block;
+            margin: auto;
+            animation: 
+                0.4s steps(4, end) infinite 50ms bike,
+                8s linear infinite 50ms move;
+            animation-play-state: paused;
+        }
+        p:hover:after {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<body>
+    <article class="ad-ad1">
+        <h1>Put your <span>dukes</span> <br>up sire</h1>
+    </article>
+    <article class="ad-ad2">
+        <h1>Put your <span>dukes</span> <br>up sire</h1>
+    </article>
+    <article class="ad-ad3">
+        <h1>Put your <span>dukes</span> <br>up sire</h1>
+    </article>
+    <article class="transition">
+        <h1>Put your <span>dukes</span> <br>up sire</h1>
+    </article>
+    <article class="colorTransition">
+        <h1>Put your <span>dukes</span> <br>up sire</h1>
+    </article>
+    <article class="animation">
+        <p></p>
+    </article>
+</body>
+</html>

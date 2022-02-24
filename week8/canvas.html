@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        .myCanvas {
+            border: dotted 2px black;
+        }
+        .spin {
+            position: absolute;
+            top: 8px;
+            left: 55px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Demo 1: Drawing a rectangle</h2>
+    <canvas width="200" height="200" id="demo1" class="myCanvas">
+    Sorry! Your browser doesn't support Canvas.
+    </canvas>
+    <h2>Demo 2: Filling the canvas with a pattern</h2>
+    <canvas width="200" height="200" id="demo2" class="myCanvas">
+    Sorry! Your browser doesn't support Canvas.
+    </canvas>
+    
+    <h2>Demo 3: Creating a gradient on the canvas</h2>
+    <canvas width="200" height="200" id="demo3" class="myCanvas">
+    Sorry! Your browser doesn't support Canvas.
+    </canvas>
+    
+    <h2>Demo 4: Drawing a circle</h2>
+    <canvas width="200" height="200" id="demo4" class="myCanvas">
+    Sorry! Your browser doesn't support Canvas.
+    </canvas>
+    
+    <h2>Demo 5: Drawing an Image to the Canvas</h2>
+    <canvas width="200" height="200" id="demo5" class="myCanvas">
+    Sorry! Your browser doesn't support Canvas.
+    </canvas>
+    <img src="./images/tree.png" id="myImageElem">
+    
+    <h2>Demo 6: Converting Image to Black and white</h2>
+    <canvas width="200" height="200" id="demo6" class="myCanvas">
+    Sorry! Your browser doesn't support Canvas.
+    </canvas>
+    <img src="./images/tree.png" id="secondImage">
+
+    <h2>Demo 7: SVG</h2>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+        <circle cx="50" cy="50" r="25" fill="red"/>
+    </svg> -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 600 300">
+        <desc>Drawing a rectangle</desc>
+            <rect x="20" y="10" width="200" height="200"  
+                fill="blue" stroke="red" stroke-width="3"  />  
+                <circle cx="120" cy="110" r="25" fill="red"/>
+        
+    </svg>
+
+    <h2>Demo 8: SVG spinner</h2>
+    <article class="ad-ad4">
+        <div id="mapDiv">        
+        <h1 id="geoHeading">Where in the world are you?</h1>
+        <form id="geoForm">
+            <input type="button" id="geobutton" value="Tell us!">
+        </form>    
+        <div class="spin" id="spinner"></div> 
+        </div>
+    </article>
+
+    <script src="./canvas.js"></script>
+</body>
+</html>
