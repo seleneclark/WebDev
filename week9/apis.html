@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIs</title>
+</head>
+<body>
+    <h1>APIs</h1>
+    <div id='hero' data-powers='flight superSpeed'>
+        Superman
+        <p id="herotext"></p>
+    </div>
+
+    <script>
+        const superman = document.getElementById('hero');
+        const powers = superman.getAttribute('data-powers');
+        console.log(powers);
+        navigator.geolocation.getCurrentPosition(youAreHere);
+
+        function youAreHere(position) {
+            let information = document.getElementById('herotext');
+            information.innerHTML = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`; 
+            information.innerHTML +=  `<br>Timestamp: ${position.timestamp}`;
+        }
+    </script>
+</body>
+</html>
