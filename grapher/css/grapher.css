@@ -1,0 +1,13 @@
+.box {
+    border-style: groove;
+    width: 416px;
+    height: 450px;
+    border-radius: 5px;
+}
+
+#graphCanvas {
+    border-style: groove;
+    width: 400px;
+    height: 400px;
+    margin: 5px; 
+}
