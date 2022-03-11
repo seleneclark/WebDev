@@ -1,6 +1,10 @@
 
 const links = [
     {
+        label: "Polynomial Grapher",
+        url: "grapher/index.html"
+    },
+    {
         label: "ToDo App",
         url: "ToDo/index.html"
     },
