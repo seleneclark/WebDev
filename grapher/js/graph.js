@@ -1,26 +1,57 @@
-var c = document.getElementById("graphCanvas");
-var context = c.getContext("2d");
-context.strokeStyle = '#0c0';
 
-context.moveTo(0, 75);
-context.lineTo(300, 75);
-context.moveTo(150, 0);
-context.lineTo(150, 150);
-context.stroke();
 
-// context.lineWidth = 4;
-var d = document.getElementById("graphCanvas");
 
-var graph = d.getContext("2d");
-graph.strokeStyle = '#c00';
+export class Graph {
+    constructor(points){
+        console.log('constructor');
+        // const gridPoints = points.map(convertPoints);
+        this.points = points.map(convertPoints);
+        drawGrid();
+    }
+    
+    
+    drawGraph(){
+        const c = document.getElementById("graphCanvas");
+        const graph = c.getContext("2d");
+        graph.beginPath();
+        graph.lineWidth = 1;
+        graph.strokeStyle = '#400080';
+        graph.moveTo(this.points[0].x, this.points[0].y);
+        for (let i = 1; i < this.points.length; i++){
+            graph.lineTo(this.points[i].x, this.points[i].y);
+        }
+        graph.stroke();
+    }
+    
+    
+    
+}
 
-graph.moveTo(0, 150);
-graph.lineTo(5, 145);
-graph.lineTo(10, 146);
-graph.lineTo(20, 145);
-graph.lineTo(30, 144);
-graph.lineTo(40, 143);
-graph.lineTo(50, 141);
-graph.lineTo(60, 138);
 
-graph.stroke();
+function drawGrid () {
+    const c = document.getElementById("graphCanvas");
+    const context = c.getContext("2d");
+    context.beginPath();
+    context.lineWidth = 2;
+    context.strokeStyle = '#132639';
+    context.moveTo(0, 75);
+    context.lineTo(300, 75);
+    context.stroke();
+
+    context.beginPath();
+    context.lineWidth = 4;
+
+    context.moveTo(150, 0);
+    context.lineTo(150, 150);
+    context.stroke();
+}
+// converts regular polynomial points to fit on the canvas grid
+function convertPoints(value, index, array){
+    value.x = value.x + 150;
+    value.y = (value.y * -1) + 75;
+    return value;
+}
+
+// drawGrid();
+// const gridPoints = points.map(convertPoints);
+// drawGraph();
