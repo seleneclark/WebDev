@@ -4,7 +4,6 @@
 export class Graph {
     constructor(points){
         console.log('constructor');
-        // const gridPoints = points.map(convertPoints);
         this.points = points.map(convertPoints);
         drawGrid();
     }

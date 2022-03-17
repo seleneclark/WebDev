@@ -1,4 +1,6 @@
-import {Graph} from './graph.js';
+// import {Graph} from './graph.js';
+import {Polynomial} from './polynomial.js';
+
 const points = [
     {x:-100, y:0},
     {x:-90,y:10},
@@ -23,5 +25,6 @@ const points = [
     {x:100, y:30}
 ];
 
-const graph = new Graph(points);
-graph.drawGraph();
+const polynomial = new Polynomial();
+polynomial.makePoints();
+polynomial.plotPolynomial();
