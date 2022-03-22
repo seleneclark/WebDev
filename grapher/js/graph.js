@@ -1,6 +1,3 @@
-
-
-
 export class Graph {
     constructor(points){
         console.log('constructor');
@@ -21,9 +18,6 @@ export class Graph {
         }
         graph.stroke();
     }
-    
-    
-    
 }
 
 
@@ -51,6 +45,3 @@ function convertPoints(value, index, array){
     return value;
 }
 
-// drawGrid();
-// const gridPoints = points.map(convertPoints);
-// drawGraph();
