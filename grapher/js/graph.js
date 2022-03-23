@@ -1,8 +1,9 @@
 export class Graph {
     constructor(points){
-        console.log('constructor');
-        this.points = points.map(convertPoints);
+        console.log('graph');
+        this.points = points.map(shiftPoints);
         drawGrid();
+        gridlines();
     }
     
     
@@ -39,9 +40,31 @@ function drawGrid () {
     context.stroke();
 }
 // converts regular polynomial points to fit on the canvas grid
-function convertPoints(value, index, array){
+function shiftPoints(value, index, array){
     value.x = value.x + 150;
     value.y = (value.y * -1) + 75;
     return value;
 }
 
+function gridlines(){
+    
+    const c = document.getElementById("graphCanvas");
+    const context = c.getContext("2d");
+    context.beginPath();
+    context.lineWidth = 1;
+    context.strokeStyle = '#132639';
+    for (let x = 0; x < 300; ){
+        context.beginPath();
+        context.moveTo(x, 72);
+        context.lineTo(x, 78);
+        context.stroke();
+        x = x+ 20;
+    }
+    for (let y = 0; y < 150; y = y+10){
+        context.beginPath();
+        context.moveTo(144, y);
+        context.lineTo(156, y);
+        context.stroke();
+    }
+    
+}
