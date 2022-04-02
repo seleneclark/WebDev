@@ -1,9 +1,24 @@
 import {Polynomial} from './polynomial.js';
+import {readFromLS, writeToLS} from './storage.js';
 
+window.addEventListener("load", function(){ loadPage() });
 
-// temporary polynomial  [-10,0,5,1,2,2];
-let expression = "1/10x^2+2x-30";
+let graph = document.getElementById("graphButton");
+graph.addEventListener("click", function(){ graphPolynomial()});
 
-const polynomial = new Polynomial(expression);
-polynomial.generatePointArray();
-polynomial.plotPolynomial();
+function graphPolynomial(){
+    let expression = document.getElementById("expression").value;
+    const polynomial = new Polynomial(expression);
+    polynomial.generatePointArray();
+    polynomial.plotPolynomial();
+    writeToLS(expression);
+}
+
+function loadPage(){
+    let lastExpression = readFromLS();
+    console.log(lastExpression);
+    if (expression != null){
+        document.getElementById("expression").value = lastExpression;
+        graphPolynomial();
+    }
+}

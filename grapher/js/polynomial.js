@@ -2,14 +2,12 @@ import {Graph} from './graph.js';
 
 export class Polynomial {
     constructor(expression){
-        console.log("polynomial");
         this.points = [];
-        // this.polynomial = [-40,0,5,1,2,2];
         this.polynomial = readExpression(expression);
     }
 
     generatePointArray(){
-        for (let x = -150; x <= 150; x++){
+        for (let x = -200; x <= 200; x++){
             let y = 0;
             for ( let i = 0; i < this.polynomial.length; i++){
                 let coefficient = 0;
@@ -67,13 +65,9 @@ function readExpression(expression){
                 }
             }
         }
-        // else {
-        //     power = 0;
-        // }
         arr.push(coeff);
         arr.push(power);
            
     });
-    console.log(arr);
     return arr;
 }
