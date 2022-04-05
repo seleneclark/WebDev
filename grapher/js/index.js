@@ -16,8 +16,7 @@ function graphPolynomial(){
 
 function loadPage(){
     let lastExpression = readFromLS();
-    console.log(lastExpression);
-    if (expression != null){
+    if (lastExpression !== null){
         document.getElementById("expression").value = lastExpression;
         graphPolynomial();
     }

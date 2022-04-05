@@ -3,7 +3,15 @@
 // Reads JSON ToDo list from localStorage returns to TODOS.js using key "savedList"
 function readFromLS() {
     let listString = localStorage.getItem("savedList");
-    return JSON.parse(listString);
+    console.log(listString);
+    if (listString !== null){
+        return JSON.parse(listString);
+    }
+    else {
+        let array = [];
+        return array;
+    }
+    
 
 }
 //Saves Todo List in Local Storage under the key name "savedList"

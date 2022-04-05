@@ -1,6 +1,12 @@
 function readFromLS() {
     let listString = localStorage.getItem("polynomial");
-    return JSON.parse(listString);
+    if (listString !== null){
+        return JSON.parse(listString);
+    }
+    else {
+        listString = null;
+        return listString;
+    }
 }
 function writeToLS(expression){
     localStorage.clear();
